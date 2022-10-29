@@ -120,5 +120,27 @@ namespace cis237_assignment_4
             // return the completed string
             return returnString;
         }
+        
+
+        public string ModifiedBucketSort()
+        {
+            GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
+            GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
+            GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
+            GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
+
+            GenericQueue<Droid> droidQueue = new GenericQueue<Droid>();
+
+            foreach (IDroid droid in droidCollection)
+            {
+                if (droid is AstromechDroid)
+                {
+                    astromechStack.AddToFront
+                }
+            }
+
+
+        }
+
     }
 }
