@@ -11,6 +11,7 @@ namespace cis237_assignment_4
         // Private variable to hold the length of the Collection
         private int lengthOfCollection;
 
+
         // Constructor that takes in the size of the collection.
         // It sets the size of the internal array that will be used.
         // It also sets the length of the collection to zero since nothing is added yet.
@@ -18,9 +19,21 @@ namespace cis237_assignment_4
         {
             // Make new array for the collection
             droidCollection = new IDroid[sizeOfCollection];
+
+
+
+            droidCollection[0] = new UtilityDroid("Carbonite", "Red", true, false, false);
+            droidCollection[1] = new ProtocolDroid("Vanadium", "White", 24);
+            droidCollection[2] = new ProtocolDroid("Quadranium", "Red", 5);
+            droidCollection[3] = new JanitorDroid("Vanadium", "Blue", true, false, false, true, true);
+            droidCollection[4] = new UtilityDroid("Quadranium", "White", true, false, false);
+            droidCollection[5] = new AstromechDroid("Carbonite", "Green", true, false, false, true, 10);
+            droidCollection[6] = new JanitorDroid("Carbonite", "Red", true, false, false, true, false);
+            droidCollection[7] = new AstromechDroid("Tears_Of_A_Jedi", "Green", true, false, false, false, 15);
             // Set length of collection to 0
             lengthOfCollection = 0;
         }
+
 
         // The Add method for a Protocol Droid. The parameters passed in match those needed for a protocol droid
         public bool Add(string Material, string Color, int NumberOfLanguages)
@@ -122,8 +135,9 @@ namespace cis237_assignment_4
         }
         
 
-        public string ModifiedBucketSort()
+        public void ModifiedBucketSort()
         {
+            int i = 0;
             GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
             GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
             GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
@@ -135,11 +149,69 @@ namespace cis237_assignment_4
             {
                 if (droid is AstromechDroid)
                 {
-                    astromechStack.AddToFront
+                    AstromechDroid myDroid = (AstromechDroid)droid;
+
+                    astromechStack.Push(myDroid);
+                }
+
+                if (droid is JanitorDroid)
+                {
+                    JanitorDroid myDroid = (JanitorDroid)droid;
+
+                    janitorStack.Push(myDroid);
+                }
+
+                if (droid is UtilityDroid && droid is not AstromechDroid && droid is not JanitorDroid)
+                {
+                    UtilityDroid myDroid = (UtilityDroid)droid;
+
+                    utilityStack.Push(myDroid);
+                }
+
+                if (droid is ProtocolDroid)
+                {
+                    ProtocolDroid myDroid = (ProtocolDroid)droid;
+
+                    protocolStack.Push(myDroid);
                 }
             }
 
 
+
+            do
+            {
+                droidQueue.Enqueue(astromechStack.Pop());
+            }
+            while (astromechStack.IsEmpty == false);
+
+            do
+            {
+                droidQueue.Enqueue(janitorStack.Pop());
+            }
+            while (janitorStack.IsEmpty == false);
+
+            do
+            {
+                droidQueue.Enqueue(utilityStack.Pop());
+            }
+            while (utilityStack.IsEmpty == false);
+
+            do
+            {
+                droidQueue.Enqueue(protocolStack.Pop());
+            }
+            while (protocolStack.IsEmpty == false);
+
+
+
+            foreach (IDroid droid in droidCollection)
+            {
+                while (droidQueue.IsEmpty == false)
+                {
+                    droidCollection[i] = droidQueue.Dequeue();
+                    i++;
+                }
+            }
         }
 
     }

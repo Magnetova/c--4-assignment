@@ -96,24 +96,5 @@ namespace cis237_assignment_4
             return returnData;
         }
 
-
-        public void Display()
-        {
-            Console.WriteLine("The list is:");
-
-            // Setup a currentNode to walk the list
-            // Start it at the head node
-            Node current = _head;
-
-            // Loop through the ndoes until we hit null which will signify the end of the list
-            while (current != null)
-            {
-                Console.WriteLine(current.Data);
-
-                // Move to the next node
-                current = current.Next;
-            }
-            Console.WriteLine();
-        }
     }
 }
