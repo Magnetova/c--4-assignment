@@ -135,12 +135,14 @@ namespace cis237_assignment_4
             if (obj == null) return 1;
 
             IDroid otherDroid = obj as IDroid;
-            if (otherDroid != null)
-                return this.TotalCost.CompareTo(otherDroid.TotalCost);
+            if (otherDroid.TotalCost < this.TotalCost)
+            {
+                return -1;
+            }
             else
-                throw new ArgumentException("Object is not a Temperature");
-
-
+            {
+                return 0;
+            }
         }
     }
 }
