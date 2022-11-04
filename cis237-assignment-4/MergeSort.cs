@@ -23,7 +23,7 @@ namespace cis237_assignment_4
             {
                 if (i > mid) a[k] = aux[j++];
                 else if (j > hi) a[k] = aux[i++];
-                else if (less(aux[j], aux[i])) a[k] = aux[j++];
+                else if (less(aux[i], aux[j])) a[k] = aux[j++];
                 else a[k] = aux[i++];
             }
 

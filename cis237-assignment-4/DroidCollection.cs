@@ -219,6 +219,13 @@ namespace cis237_assignment_4
         {
 
             MergeSort mergeDroids = new MergeSort();
+            foreach(IDroid droid in droidCollection)
+            {
+                if(droid != null)
+                {
+                    droid.CalculateTotalCost();
+                }
+            }
 
             Array.Resize<IDroid>(ref droidCollection, lengthOfCollection);
             MergeSort.sort(droidCollection);
