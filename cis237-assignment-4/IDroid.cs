@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 11-04-2022
+
+using System;
 
 namespace cis237_assignment_4
 {

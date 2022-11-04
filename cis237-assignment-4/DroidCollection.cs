@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 11-04-2022
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,7 +26,7 @@ namespace cis237_assignment_4
             droidCollection = new IDroid[sizeOfCollection];
 
 
-
+            // Hard coded droids that are entered into the array for testing purposes
             droidCollection[0] = new UtilityDroid("Carbonite", "Red", true, false, false);
             droidCollection[1] = new ProtocolDroid("Vanadium", "White", 24);
             droidCollection[2] = new ProtocolDroid("Quadranium", "Red", 5);
@@ -30,8 +35,21 @@ namespace cis237_assignment_4
             droidCollection[5] = new AstromechDroid("Carbonite", "Green", true, false, false, true, 10);
             droidCollection[6] = new JanitorDroid("Carbonite", "Red", true, false, false, true, false);
             droidCollection[7] = new AstromechDroid("Tears_Of_A_Jedi", "Green", true, false, false, false, 15);
-            // Set length of collection to 8 because of harcoded data
-            lengthOfCollection = 8;
+            // calculate length of non null values within the droid array
+            lengthOfCollection = GetLength();
+        }
+
+        // Gets the length of non null values of the array
+        private int GetLength()
+        {
+            int i = 0;
+            while (droidCollection[i] != null)
+            {
+                i++;
+            }
+
+            return i;
+            
         }
 
 
@@ -134,7 +152,14 @@ namespace cis237_assignment_4
             return returnString;
         }
         
-
+        // Sorts the droids in order of droid type (astomech, janitor, utility, protocol)
+        // It does this by creating an instance of a stack for each droid type by comparing IDroid to a specific droid type
+        // and then pushes the droid onto its respective stack.
+        // Once all droids have been entered into a stack/there are no more droids left in the array, the foreach loop
+        // pops each stack individually until the stack is empty and then moves onto the next stack.
+        // After every pop, the returned top value from the stack is enqueued into the generic queue that holds any Droid type.
+        // The entire queue is then dequeued until it is empty, inserting each returned value from the queue back into the IDroid array.
+        // The droids are now sorted by droid type.
         public void ModifiedBucketSort()
         {
             int i = 0;
@@ -215,6 +240,12 @@ namespace cis237_assignment_4
         }
 
 
+        // The method calculates the total cost of every droid in the array so that the total cost values can be
+        // stored without having to print the list first.
+        // The method resizes the current Droid array to contain no null values.
+        // The resized array is then passed into the MergeSort class and sorted within the class.
+        // After the sort has completed, it returns the size of the array back to 100 so that additional droids may
+        // be added if need be.
         public void MergeDroids()
         {
 
@@ -229,6 +260,7 @@ namespace cis237_assignment_4
 
             Array.Resize<IDroid>(ref droidCollection, lengthOfCollection);
             MergeSort.sort(droidCollection);
+            Array.Resize<IDroid>(ref droidCollection, 100);
         }
 
     }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 11-04-2022
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -29,8 +33,13 @@ namespace cis237_assignment_4
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
             Console.WriteLine("3. Sort droids by droid type");
-            Console.WriteLine("4. Sort droids by price");
+            Console.WriteLine("4. Sort droids by total cost");
             Console.WriteLine("5. Exit the program");
+        }
+
+        public void DisplaySortCompletion()
+        {
+            Console.WriteLine("Sort has been completed!\n");
         }
 
         // Method to get a menu choice

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 11-04-2022
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -130,6 +134,13 @@ namespace cis237_assignment_4
             return colorCost;
         }
 
+
+        // A method that is inherited by the IComparitable interface.
+        // The method takes in an obj (in this case a droid) and compares the total cost
+        // of the two droids.
+        // If the total cost of the first droid is greater than the cost of the second droid, then 
+        // a -1 int value is returned so that the merger sort method can interpret that the first droid
+        // is greater in value than the second droid.
         public int CompareTo(object obj)
         {
             if (obj == null) return 1;

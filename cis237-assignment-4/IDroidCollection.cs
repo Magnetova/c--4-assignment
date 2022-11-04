@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 11-04-2022
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +18,9 @@ namespace cis237_assignment_4
 
         // Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
+        // Method to sort the droids in order of droid type
         void ModifiedBucketSort();
+        // Method to sort the droids in order of total cost low to high
         void MergeDroids();
     }
 }

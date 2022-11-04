@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 11-04-2022
+
+using System;
 
 namespace cis237_assignment_4
 {
@@ -21,7 +25,7 @@ namespace cis237_assignment_4
             // Get the choice that the user makes
             int choice = userInterface.GetMenuChoice();
 
-            // While the choice is not equal to 3, continue to do work with the program
+            // While the choice is not equal to 5, continue to do work with the program
             while (choice != 5)
             {
                 // Test which choice was made
@@ -37,12 +41,16 @@ namespace cis237_assignment_4
                         userInterface.PrintDroidList();
                         break;
 
+                    // Choose to sort the droid by droid type
                     case 3:
                         droidCollection.ModifiedBucketSort();
+                        userInterface.DisplaySortCompletion();
                         break;
 
+                    //Choose to sort the droid by total cost
                     case 4:
                         droidCollection.MergeDroids();
+                        userInterface.DisplaySortCompletion();
                         break;
                 }
                 // Re-display the menu, and re-prompt for the choice

@@ -1,7 +1,7 @@
 # Assignment 4 - Interfaces, Stacks, Queues, Generics, and Merge Sort. Project uses Assignment 3 solution.
 
 ## Author
-
+Cayden Greer
 
 
 ## Description
@@ -99,10 +99,13 @@ Be sure to think about what the time complexity for the bucket sort will be. Thi
 | **Total**                               | **100**|
 
 ## Outside Resources Used
-
+The link to the merge sort from the java merge file.
+The code on microsoft for CompareTo.
+How to resize array - https://stackoverflow.com/questions/4840802/change-array-size
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
+There are no known problems that I am aware of.
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
