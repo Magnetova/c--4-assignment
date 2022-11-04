@@ -10,7 +10,7 @@ namespace cis237_assignment_4
     /// Note: CalculateTotalCost returns a void, meaning that access to the Total Cost value
     /// must be done by use of the property TotalCost once the CalculateTotalCost method has been called.
     /// </summary>
-    interface IDroid
+    interface IDroid : IComparable
     {
         // Method to calculate the total cost of a droid
         void CalculateTotalCost();

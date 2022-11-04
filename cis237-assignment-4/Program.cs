@@ -40,6 +40,10 @@ namespace cis237_assignment_4
                     case 3:
                         droidCollection.ModifiedBucketSort();
                         break;
+
+                    case 4:
+                        droidCollection.MergeDroids();
+                        break;
                 }
                 // Re-display the menu, and re-prompt for the choice
                 userInterface.DisplayMainMenu();

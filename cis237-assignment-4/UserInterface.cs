@@ -30,7 +30,7 @@ namespace cis237_assignment_4
             Console.WriteLine("2. Print the list of droids out");
             Console.WriteLine("3. Sort droids by droid type");
             Console.WriteLine("4. Sort droids by price");
-            Console.WriteLine("3. Exit the program");
+            Console.WriteLine("5. Exit the program");
         }
 
         // Method to get a menu choice

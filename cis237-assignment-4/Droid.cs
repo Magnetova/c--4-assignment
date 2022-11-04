@@ -129,5 +129,18 @@ namespace cis237_assignment_4
 
             return colorCost;
         }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            IDroid otherDroid = obj as IDroid;
+            if (otherDroid != null)
+                return this.TotalCost.CompareTo(otherDroid.TotalCost);
+            else
+                throw new ArgumentException("Object is not a Temperature");
+
+
+        }
     }
 }

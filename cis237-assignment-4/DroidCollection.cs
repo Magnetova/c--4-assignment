@@ -30,8 +30,8 @@ namespace cis237_assignment_4
             droidCollection[5] = new AstromechDroid("Carbonite", "Green", true, false, false, true, 10);
             droidCollection[6] = new JanitorDroid("Carbonite", "Red", true, false, false, true, false);
             droidCollection[7] = new AstromechDroid("Tears_Of_A_Jedi", "Green", true, false, false, false, 15);
-            // Set length of collection to 0
-            lengthOfCollection = 0;
+            // Set length of collection to 8 because of harcoded data
+            lengthOfCollection = 8;
         }
 
 
@@ -212,6 +212,16 @@ namespace cis237_assignment_4
                     i++;
                 }
             }
+        }
+
+
+        public void MergeDroids()
+        {
+
+            MergeSort mergeDroids = new MergeSort();
+
+            Array.Resize<IDroid>(ref droidCollection, lengthOfCollection);
+            MergeSort.sort(droidCollection);
         }
 
     }
